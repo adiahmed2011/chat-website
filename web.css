@@ -1,0 +1,120 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;  /* Lighter background */
+    color: #333;
+    padding: 20px;
+}
+
+/* Chat container */
+.chat-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+    border: 1px solid #ddd;  /* Light border */
+}
+
+/* Messages container */
+.messages {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 10px;
+    background-color: #fafafa;  /* Slightly lighter background */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Individual message style */
+.message {
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* User message style */
+.message.user {
+    background-color: #d1e7dd;  /* Light greenish for user */
+    text-align: right;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+/* Bot message style */
+.message.bot {
+    background-color: #f8d7da;  /* Light reddish for bot */
+    text-align: left;
+    margin-right: 50px;
+    font-style: italic;
+}
+
+/* Input area style */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Text input field style */
+.input-container input {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;  /* Slight grayish */
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;  /* White background on focus */
+}
+
+/* Button style */
+.input-container button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
+}
+
+.input-container button:focus {
+    outline: none;
+}
+
+/* Scrollbar styling */
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Texting Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .chat-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .messages {
+            height: 300px;
+            overflow-y: scroll;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding-right: 10px;
+        }
+        .message {
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .message.user {
+            background-color: #d4edda;
+            text-align: right;
+        }
+        .message.bot {
+            background-color: #f8d7da;
+            text-align: left;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+        .input-container input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-container button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="messages" id="messages"></div>
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let messageInput = document.getElementById('messageInput');
+            let message = messageInput.value.trim();
+
+            if (message) {
+                let messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'user');
+                messageDiv.textContent = message;
+                document.getElementById('messages').appendChild(messageDiv);
+
+                // Simulate a bot response after a delay
+                setTimeout(function() {
+                    let botMessageDiv = document.createElement('div');
+                    botMessageDiv.classList.add('message', 'bot');
+                    botMessageDiv.textContent = "Bot: I received your message!";
+                    document.getElementById('messages').appendChild(botMessageDiv);
+
+                    // Scroll to the bottom to show the latest message
+                    document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+                }, 1000);
+
+                // Clear the input field
+                messageInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
